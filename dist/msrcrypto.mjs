@@ -8768,9 +8768,11 @@ keys.remove = function (keyHandle) {
         }
     }
 };
+
+const isEqual = require('lodash.isequal');
 keys.lookup = function (keyHandle) {
     for (var i = 0; i < keys.length; i++) {
-        if (keys[i].keyHandle === keyHandle) {
+        if (isEqual(keys[i].keyHandle, keyHandle)) {
             return keys[i].keyData;
         }
     }
